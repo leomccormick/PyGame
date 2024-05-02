@@ -1,4 +1,4 @@
-from operacoes import *
+from classes import *
 
 pygame.init()
 
