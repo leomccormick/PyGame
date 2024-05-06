@@ -1,4 +1,4 @@
-import random, pygame
+from config import *
 from constantes import *
 
 class Player(pygame.sprite.Sprite):
