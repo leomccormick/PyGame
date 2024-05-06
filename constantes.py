@@ -1,9 +1,13 @@
-import random, math, time, pygame
+from config import *
 
 # Tela:
 
-Heigth = 4 * 250
-Length = 3 * 250
+HEIGHT = 4 * 250
+WIDTH = 3 * 250
+
+# Imagens:
+
+
 
 # Situações:
 
