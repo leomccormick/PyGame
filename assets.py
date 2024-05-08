@@ -1,5 +1,6 @@
 import pygame
 import os
+<<<<<<< HEAD
 from config import *
 
 def load_assets():
@@ -27,3 +28,12 @@ def load_assets():
     assets[DESTROY_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'expl6.wav'))
     assets[PEW_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'pew.wav'))
     return assets
+=======
+from config import IMG_DIR, SND_DIR, FNT_DIR
+
+BACKGROUND = 'background'
+
+def load_assets():
+    assets = {}
+    assets[BACKGROUND] = pygame.image.load(os.path.join(IMG_DIR, 'background.png')).convert()
+>>>>>>> d1060403c9528f75baf33656bbbaf5314db920ee
