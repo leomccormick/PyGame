@@ -1,4 +1,4 @@
-from constantes import *
+from config import *
 import pygame
 
 def main():
