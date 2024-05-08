@@ -10,5 +10,15 @@ class Player(pygame.sprite.Sprite):
             self.rect.centerx = WIDTH / 2
             self.rect.bottom = HEIGHT - 25
             self.speedx = 0
+            self.acaeleracao = 0
             self.groups = groups
             self.assets = assets
+        
+        def update(self):
+            self.rect.x += self.speedx
+            self.speedx += self.acaeleracao
+            if self.rect.x % (WIDTH/3) == 0:
+                self.acaeleracao *= -1
+            if self.rect.x % (WIDTH/3 - WIDTH/6) == 0:
+                self.acaeleracao *= 0
+                self.rect.x *= 0
