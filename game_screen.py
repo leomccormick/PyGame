@@ -1,4 +1,5 @@
 from config import *
+from assets import load_assets
 import pygame
 
 def main():
