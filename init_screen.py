@@ -1,5 +1,4 @@
 from config import *
-from constantes import *
 from operacoes import *
 from assets import *
 from sprites import *
