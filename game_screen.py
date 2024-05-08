@@ -20,13 +20,9 @@ def main():
                 if event.type == pygame.KEYDOWN:
                     keys_down[event.key] = True
                     if event.key == pygame.K_LEFT:
-                        ...
+                        player.aceleracao = -1562
                     if event.key == pygame.K_RIGHT:
-                        ...
-                    if event.key == pygame.K_a:
-                        ...
-                    if event.key == pygame.K_d:
-                        ...
+                        player.aceleracao = 1562
 
                 
 
