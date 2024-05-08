@@ -8,7 +8,7 @@ FNT_DIR = path.join(path.dirname(__file__), 'assets', 'font')
 
 # Dados gerais do jogo e tela.
 WIDTH = 3 * 250 # Largura da tela
-HEIGHT = 4 * 250 # Altura da tela
+HEIGHT = 3 * 250 # Altura da tela
 FPS = 60 # Frames por segundo
 
 # Define algumas variáveis com as cores básicas
