@@ -1,5 +1,5 @@
 import pygame
-from constantes import *
+from config import *
 from game_screen import main
 
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))

@@ -7,8 +7,8 @@ SND_DIR = path.join(path.dirname(__file__), 'assets', 'snd')
 FNT_DIR = path.join(path.dirname(__file__), 'assets', 'font')
 
 # Dados gerais do jogo e tela.
-# WIDTH = 480 # Largura da tela
-# HEIGHT = 600 # Altura da tela
+WIDTH = 3 * 250 # Largura da tela
+HEIGHT = 4 * 250 # Altura da tela
 FPS = 60 # Frames por segundo
 
 # Define algumas variáveis com as cores básicas
@@ -23,3 +23,37 @@ YELLOW = (255, 255, 0)
 INIT = 0
 GAME = 1
 QUIT = 2
+
+# Situações:
+
+# Trem esquerda = -1
+# Trem meio = 0
+# Trem direita = 1
+# Sem trem = 2
+
+#situação 1 exemplo:
+#   [
+#        [-1, 2, 2],
+#        [-1, 2, 2],
+#        [0, 2, 1],
+#        [2, 2, 1],
+#        [2, 2, 0],
+#        [2, 2, 0]
+#   ]
+#       ,█     ,
+#       ,█     ,
+#       ,██   █,
+#       ,     █,
+#       ,    ██,
+#       ,    ██,
+
+situations = [
+    [
+        [-1, 2, 2],
+        [-1, 2, 2],
+        [0, 2, 1],
+        [2, 2, 1],
+        [2, 2, 0],
+        [2, 2, 0]
+    ] 
+]
