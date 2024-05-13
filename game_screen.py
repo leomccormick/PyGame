@@ -15,6 +15,7 @@ def main():
     groups['all_sprites'] = all_sprites
     groups['all_ice'] = all_ice
 
+    # Criando o jogador
     player = Player(groups, assets)
     all_sprites.add(player)
 

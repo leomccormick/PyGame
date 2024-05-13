@@ -3,10 +3,12 @@ import os
 from config import *
 
 BACKGROUND = 'background'
+PLAYER = 'player'
 
 def load_assets():
     assets = {}
     assets[BACKGROUND] = pygame.image.load(os.path.join(IMG_DIR, 'background.jpg')).convert()
+    assets[PLAYER] = pygame.image.load(os.path.join(IMG_DIR, 'player.jpg')).convert()
     
     # Carrega os sons do jogo
     pygame.mixer.music.load(os.path.join(SND_DIR, 'tgfcoder-FrozenJam-SeamlessLoop.ogg'))
