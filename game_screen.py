@@ -4,7 +4,7 @@ from sprites import Player, Ice
 import pygame
 import random
 
-def main(WINDOW):
+def game_screen(window):
     clock = pygame.time.Clock()
     
     assets = load_assets()

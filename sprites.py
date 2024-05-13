@@ -3,7 +3,7 @@ import pygame
 from config import WIDTH, HEIGHT
 from assets import load_assets, PLAYER, ICE
 
-load_assets()
+
 
 class Player(pygame.sprite.Sprite):
     def __init__(self, groups, assets):

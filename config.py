@@ -1,5 +1,8 @@
 from os import path
-import random
+
+BACKGROUND = 'background'
+PLAYER = 'player'
+ICE = 'ICE'
 
 # Estabelece a pasta que contem as figuras e sons.
 IMG_DIR = path.join(path.dirname(__file__), 'assets', 'img')

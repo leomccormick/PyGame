@@ -1,10 +1,7 @@
 import pygame
 import os
-from config import IMG_DIR, SND_DIR
+from config import IMG_DIR, SND_DIR, BACKGROUND, PLAYER, ICE
 
-BACKGROUND = 'background'
-PLAYER = 'player'
-ICE = 'ICE'
 
 def load_assets():
     assets = {}
