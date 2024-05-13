@@ -1,4 +1,5 @@
 from os import path
+import random
 
 # Estabelece a pasta que contem as figuras e sons.
 IMG_DIR = path.join(path.dirname(__file__), 'assets', 'img')
