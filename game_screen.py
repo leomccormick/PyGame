@@ -1,11 +1,12 @@
-from config import FPS
+from config import FPS, situations
 from assets import load_assets
-from sprites import Player
+from sprites import Player, Ice
 import pygame
+import random
 
 def main():
     clock = pygame.time.Clock()
-
+    
     assets = load_assets()
 
     # Criando grupo de gelos
@@ -29,6 +30,17 @@ def main():
 
     while state != DONE:
         clock.tick(FPS)
+
+        if len(all_ice.sprites()) == 0:
+            issue = random.choice(situations)
+            situacaoDuracao = 0
+
+        if situacaoDuracao % 5 == 0:
+            for gelo in range(len(issue[situacaoDuracao/5])):
+                if issue[situacaoDuracao/5][gelo] != -2:
+                    IcE = Ice(groups, assets, gelo)
+                    all_sprites.add(IcE)
+                    all_ice.add(IcE)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 state = DONE
@@ -50,5 +62,6 @@ def main():
             hits = pygame.sprite.spritecollide(player, all_ice, False, pygame.sprite.collide_mask)
         if len(hits) > 0:
             now = pygame.time.get_ticks()
+
         pygame.display.update()
     pygame.quit()
