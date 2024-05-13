@@ -1,11 +1,13 @@
 import pygame
 from os import path
 from config import IMG_DIR, FPS, QUIT, GAME, BLACK
+from assets import load_assets
 
 
 def init_screen(screen):
     # Variável para o ajuste de velocidade
     clock = pygame.time.Clock()
+    assets =load_assets
 
      # Carrega o fundo da tela inicial
     background = pygame.image.load(path.join(IMG_DIR, 'background.jpg')).convert() 

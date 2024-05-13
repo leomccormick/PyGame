@@ -3,7 +3,7 @@ from assets import load_assets
 from sprites import Player
 import pygame
 
-def main():
+def main(WINDOW):
     clock = pygame.time.Clock()
 
     assets = load_assets()
