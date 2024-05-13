@@ -1,4 +1,3 @@
-import random, math, time, pygame
 from os import path
 
 # Estabelece a pasta que contem as figuras e sons.
