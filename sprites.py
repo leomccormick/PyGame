@@ -1,10 +1,13 @@
 from config import *
+from assets import load_assets, PLAYER
+
+load_assets()
 
 class Player(pygame.sprite.Sprite):
         def __init__(self, groups, assets):
             pygame.sprite.Sprite.__init__(self)
 
-            self.image = assets[PLAYER_IMG]
+            self.image = assets[PLAYER]
             self.mask = pygame.mask.from_surface(self.image)
             self.rect = self.image.get_rect()
             self.rect.centerx = WIDTH / 2
