@@ -1,6 +1,6 @@
-from config import *
+from config import FPS
 from assets import load_assets
-from sprites import *
+from sprites import Player
 import pygame
 
 def main():
@@ -8,9 +8,9 @@ def main():
 
     assets = load_assets()
 
+    # Criando grupo de gelos
     all_sprites = pygame.sprite.Group()
     all_ice = pygame.sprite.Group()
-
     groups = {}
     groups['all_sprites'] = all_sprites
     groups['all_ice'] = all_ice
@@ -24,7 +24,6 @@ def main():
     state = PLAYING
     
     keys_down = {}
-
     score = 0
     fase = 1
 
@@ -51,4 +50,5 @@ def main():
             hits = pygame.sprite.spritecollide(player, all_ice, False, pygame.sprite.collide_mask)
         if len(hits) > 0:
             now = pygame.time.get_ticks()
+        pygame.display.update()
     pygame.quit()
