@@ -35,11 +35,11 @@ def main():
             if state == PLAYING:
                 if event.type == pygame.KEYDOWN:
                     keys_down[event.key] = True
-                    if event.key == pygame.K_LEFT:
+                    if event.key == pygame.K_LEFT or event.key == pygame.K_a:
                         if player.parado and player.x != 625:
                             player.aceleracao = -125*2/0.09
                             player.parado = False
-                    if event.key == pygame.K_RIGHT:
+                    if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
                         if player.parado and player.x != 125:
                             player.aceleracao = 125*2/0.09
                             player.parado = False
