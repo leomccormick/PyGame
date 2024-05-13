@@ -1,6 +1,7 @@
-from config import *
-from assets import *
-from sprites import *
+import pygame
+from os import path
+from config import IMG_DIR, FPS, QUIT, GAME, BLACK
+
 
 def init_screen(screen):
     # Variável para o ajuste de velocidade
@@ -33,3 +34,4 @@ def init_screen(screen):
 
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()
+    return state
