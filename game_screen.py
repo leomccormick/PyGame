@@ -9,13 +9,15 @@ def game_screen(window):
     
     assets = load_assets()
 
+    IceVelM = 1
+
     # Criando grupo de gelos
     all_sprites = pygame.sprite.Group()
     all_ice = pygame.sprite.Group()
     groups = {}
     groups['all_sprites'] = all_sprites
     groups['all_ice'] = all_ice
-
+    tempo = 0
     # Criando o jogador
     player = Player(groups, assets)
     all_sprites.add(player)
@@ -41,6 +43,9 @@ def game_screen(window):
                     IcE = Ice(groups, assets, gelo)
                     all_sprites.add(IcE)
                     all_ice.add(IcE)
+
+        situacaoDuracao += 1/FPS
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 state = DONE
@@ -58,6 +63,12 @@ def game_screen(window):
 
         all_sprites.update()
         
+        tempo += 1/FPS
+
+        if tempo % 30 == 0:
+            fase += 1
+            IceVelM += 0.1
+
         if state == PLAYING:
             hits = pygame.sprite.spritecollide(player, all_ice, False, pygame.sprite.collide_mask)
         if len(hits) > 0:
