@@ -7,8 +7,8 @@ ICE = 'ICE'
 # Tamanhos dos sprites
 PLAYER_WIDTH = 200
 PLAYER_HEIGHT = 200
-ICE_WIDTH = ...
-ICE_HEIGHT = ...
+ICE_WIDTH = 250 
+ICE_HEIGHT = 250
 
 # Estabelece a pasta que contem as figuras e sons.
 IMG_DIR = path.join(path.dirname(__file__), 'assets', 'img')

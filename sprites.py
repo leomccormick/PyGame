@@ -12,7 +12,7 @@ class Player(pygame.sprite.Sprite):
         self.image = assets[PLAYER]
         self.mask = pygame.mask.from_surface(self.image)
         self.rect = self.image.get_rect()
-        self.rect.centerx = WIDTH / 2
+        self.rect.centerx = WIDTH / 2 
         self.rect.bottom = HEIGHT - 25
         self.speedx = 0
         self.groups = groups
@@ -33,11 +33,11 @@ class Ice(pygame.sprite.Sprite):
         self.mask = pygame.mask.from_surface(self.image)
         self.rect = self.image.get_rect()
         if lane == 0:
-            self.rect.x = 125
+            self.rect.x = 0
         elif lane == 1:
-            self.rect.x = 375
+            self.rect.x = 250
         elif lane == 2:
-            self.rect.x = 600
+            self.rect.x = 475
         self.rect.y = 0
         self.groups = groups
         self.assets = assets
