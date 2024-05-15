@@ -13,7 +13,7 @@ state = INIT
 while state != QUIT:
     if state == INIT:
         state = init_screen(WINDOW)
-    elif state == GAME:
+    elif state == GAME: 
         state = game_screen(WINDOW)
     else:
         state = QUIT

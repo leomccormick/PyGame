@@ -33,22 +33,25 @@ def game_screen(window):
     score = 0
     fase = 1
 
+    issue = [0, 0]
+    situacaoDuracao = 100
+
     while state != DONE:
         clock.tick(FPS)
 
-        if len(all_ice.sprites()) == 0:
-            issue = random.choice(situations)
+        if situacaoDuracao == len(issue)*50:
+            issue = situations[random.randint(0, len(situations)-1)]
             situacaoDuracao = 0
 
-        if situacaoDuracao % 5 == 0:
-            i = int(situacaoDuracao/5)
+        if situacaoDuracao % 50 == 0:
+            i = int(situacaoDuracao/50)
             for gelo in range(len(issue[i])):
-                if issue[i][gelo] != -2:
+                if issue[i][gelo] != 0:
                     IcE = Ice(groups, assets, gelo)
                     all_sprites.add(IcE)
                     all_ice.add(IcE)
 
-        situacaoDuracao += 1/FPS
+        situacaoDuracao += 1
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -71,7 +74,7 @@ def game_screen(window):
 
         all_sprites.update()
 
-        print(player.rect.x)
+        print(issue)
 
         tempo += 1/FPS
 
