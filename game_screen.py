@@ -1,7 +1,7 @@
-from config import FPS, situations
+from config import FPS, situations, IMG_DIR, BACKGROUND
 from assets import load_assets
 from sprites import Player, Ice
-from init_screen import
+from os import path
 import pygame
 import random
 
@@ -9,6 +9,8 @@ def game_screen(window):
     clock = pygame.time.Clock()
     
     assets = load_assets()
+
+    background = pygame.image.load(path.join(IMG_DIR, 'background.jpg')).convert()
 
     IceVelM = 1
 
@@ -76,7 +78,7 @@ def game_screen(window):
         if len(hits) > 0:
             now = pygame.time.get_ticks()
         
-        background_rect = background.get_rect()
+        window.blit(assets[BACKGROUND], (0, 0))
         all_sprites.draw(window)
 
         pygame.display.update()
