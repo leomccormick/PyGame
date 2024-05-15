@@ -2,7 +2,6 @@ from pygame.sprite import Group
 import pygame
 from config import WIDTH, HEIGHT
 from assets import load_assets, PLAYER, ICE
-from game_screen import IceVelM
 
 IceVelInit = 50
 
