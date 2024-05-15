@@ -1,7 +1,7 @@
 from pygame.sprite import Group
 import pygame
 from config import WIDTH, HEIGHT
-from assets import load_assets, PLAYER, ICE
+from assets import load_assets, PLAYER, ICE, ARVORE
 
 IceVelInit = 50
 
@@ -34,7 +34,7 @@ class Ice(pygame.sprite.Sprite):
     def __init__(self, groups, assets, lane):
         pygame.sprite.Sprite.__init__(self)
 
-        self.image = assets[ICE]
+        self.image = assets[ARVORE]
         self.mask = pygame.mask.from_surface(self.image)
         self.rect = self.image.get_rect()
         if lane == 0:
