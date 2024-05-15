@@ -57,16 +57,20 @@ def game_screen(window):
                 if event.type == pygame.KEYDOWN:
                     keys_down[event.key] = True
                     if event.key == pygame.K_LEFT or event.key == pygame.K_a:
-                        if player.parado and player.rect.x != 625:
-                            player.speedx = 5
+                        if player.parado and player.rect.x != 25:
+                            player.rect.x -= 1
+                            player.speedx = -10
                             player.parado = False
                     if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
-                        if player.parado and player.rect.x != 125:
-                            player.speedx = 5
+                        if player.parado and player.rect.x != 525:
+                            player.rect.x += 1
+                            player.speedx = 10
                             player.parado = False
 
         all_sprites.update()
-        
+
+        print(player.rect.x)
+
         tempo += 1/FPS
 
         if tempo % 30 == 0:
