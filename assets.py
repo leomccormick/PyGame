@@ -1,6 +1,6 @@
 import pygame
 import os
-from config import IMG_DIR, SND_DIR, BACKGROUND, PLAYER, ICE, PLAYER_HEIGHT, PLAYER_WIDTH, ICE_HEIGHT, ICE_WIDTH
+from config import IMG_DIR, SND_DIR, BACKGROUND, PLAYER, ICE, PLAYER_HEIGHT, PLAYER_WIDTH, ICE_HEIGHT, ICE_WIDTH, ARVORE, ARVORE_WIDTH, ARVORE_HEIGHT
 
 
 def load_assets():
@@ -10,6 +10,8 @@ def load_assets():
     assets[PLAYER] = pygame.transform.scale(assets[PLAYER], (PLAYER_WIDTH, PLAYER_HEIGHT))
     assets[ICE] = pygame.image.load(os.path.join(IMG_DIR, 'ICE.png'))
     assets[ICE] = pygame.transform.scale(assets[ICE], (ICE_WIDTH, ICE_HEIGHT))
+    assets[ARVORE] = pygame.image.load(os.path.join(IMG_DIR, 'arvore.png'))
+    assets[ARVORE] = pygame.transform.scale(assets[ARVORE], (ARVORE_WIDTH, ARVORE_HEIGHT))
 
     # Carrega os sons do jogo
     # pygame.mixer.music.load(os.path.join(SND_DIR, 'tgfcoder-FrozenJam-SeamlessLoop.ogg'))

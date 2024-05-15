@@ -3,12 +3,15 @@ from os import path
 BACKGROUND = 'background'
 PLAYER = 'player'
 ICE = 'ICE'
+ARVORE = 'arvore'
 
 # Tamanhos dos sprites
 PLAYER_WIDTH = 200
 PLAYER_HEIGHT = 200
 ICE_WIDTH = 250 
 ICE_HEIGHT = 250
+ARVORE_WIDTH = 250
+ARVORE_HEIGHT = 250
 
 # Estabelece a pasta que contem as figuras e sons.
 IMG_DIR = path.join(path.dirname(__file__), 'assets', 'img')
