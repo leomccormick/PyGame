@@ -1,13 +1,13 @@
 import pygame
 import os
-from config import IMG_DIR, SND_DIR, BACKGROUND, PLAYER, ICE
+from config import IMG_DIR, SND_DIR, BACKGROUND, PLAYER, ICE, PLAYER_HEIGHT, PLAYER_WIDTH, ICE_HEIGHT, ICE_WIDTH
 
 
 def load_assets():
     assets = {}
     assets[BACKGROUND] = pygame.image.load(os.path.join(IMG_DIR, 'background.jpg'))
     assets[PLAYER] = pygame.image.load(os.path.join(IMG_DIR, 'player.png'))
-    assets[PLAYER] = pygame.transform.scale(assets[PLAYER], )
+    assets[PLAYER] = pygame.transform.scale(assets[PLAYER], (PLAYER_WIDTH, PLAYER_HEIGHT))
     assets[ICE] = pygame.image.load(os.path.join(IMG_DIR, 'ICE.jpg'))
     
     # Carrega os sons do jogo
