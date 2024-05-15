@@ -86,6 +86,7 @@ def game_screen(window):
             hits = pygame.sprite.spritecollide(player, all_ice, False, pygame.sprite.collide_mask)
         if len(hits) > 0:
             now = pygame.time.get_ticks()
+            state = DONE
         
         window.blit(assets[BACKGROUND], (0, 0))
         all_sprites.draw(window)
