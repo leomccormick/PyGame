@@ -18,6 +18,7 @@ class Player(pygame.sprite.Sprite):
         self.acaeleracao = 0
         self.groups = groups
         self.assets = assets
+        self.parado = True
         
     def update(self):
         self.rect.x += self.speedx
@@ -27,6 +28,7 @@ class Player(pygame.sprite.Sprite):
         if self.rect.x % (WIDTH/3 - WIDTH/6) == 0:
             self.acaeleracao *= 0
             self.rect.x *= 0
+            self.parado = True
 
 class Ice(pygame.sprite.Sprite):
     def __init__(self, groups, assets, lane):
@@ -44,15 +46,10 @@ class Ice(pygame.sprite.Sprite):
         self.rect.y = 0
         self.groups = groups
         self.assets = assets
+        self.speed = 5
     
     def update(self):
+        print(self.rect.x, self.rect.y)
         self.rect.y += self.speed
-        if self.rect.y <= HEIGHT:
+        if self.rect.y >= HEIGHT:
             self.kill()
-        self.rect.x += self.speedx
-        self.speedx += self.acaeleracao
-        if self.rect.x % (WIDTH/3) == 0:
-            self.acaeleracao *= -1
-        if self.rect.x % (WIDTH/3 - WIDTH/6) == 0:
-            self.acaeleracao *= 0
-            self.rect.x *= 0

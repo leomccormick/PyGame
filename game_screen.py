@@ -38,8 +38,9 @@ def game_screen(window):
             situacaoDuracao = 0
 
         if situacaoDuracao % 5 == 0:
-            for gelo in range(len(issue[situacaoDuracao/5])):
-                if issue[situacaoDuracao/5][gelo] != -2:
+            i = int(situacaoDuracao/5)
+            for gelo in range(len(issue[i])):
+                if issue[i][gelo] != -2:
                     IcE = Ice(groups, assets, gelo)
                     all_sprites.add(IcE)
                     all_ice.add(IcE)
@@ -53,11 +54,11 @@ def game_screen(window):
                 if event.type == pygame.KEYDOWN:
                     keys_down[event.key] = True
                     if event.key == pygame.K_LEFT or event.key == pygame.K_a:
-                        if player.parado and player.x != 625:
+                        if player.parado and player.rect.x != 625:
                             player.aceleracao = -125*2/0.09
                             player.parado = False
                     if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
-                        if player.parado and player.x != 125:
+                        if player.parado and player.rect.x != 125:
                             player.aceleracao = 125*2/0.09
                             player.parado = False
 
@@ -73,6 +74,8 @@ def game_screen(window):
             hits = pygame.sprite.spritecollide(player, all_ice, False, pygame.sprite.collide_mask)
         if len(hits) > 0:
             now = pygame.time.get_ticks()
+        
+        all_sprites.draw(window)
 
         pygame.display.update()
     pygame.quit()
