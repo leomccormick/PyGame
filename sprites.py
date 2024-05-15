@@ -42,7 +42,6 @@ class Ice(pygame.sprite.Sprite):
         elif lane == 2:
             self.rect.x = 600
         self.rect.y = 0
-        self.speed = IceVelInit*IceVelM
         self.groups = groups
         self.assets = assets
     
@@ -50,7 +49,6 @@ class Ice(pygame.sprite.Sprite):
         self.rect.y += self.speed
         if self.rect.y <= HEIGHT:
             self.kill()
-        self.speed = IceVelInit*IceVelM
         self.rect.x += self.speedx
         self.speedx += self.acaeleracao
         if self.rect.x % (WIDTH/3) == 0:
