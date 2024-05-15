@@ -56,6 +56,8 @@ def game_screen(window):
             if state == PLAYING:
                 if event.type == pygame.KEYDOWN:
                     keys_down[event.key] = True
+                    if event.key == pygame.K_ESCAPE:
+                        state = DONE
                     if event.key == pygame.K_LEFT or event.key == pygame.K_a:
                         if player.parado and player.rect.x != 25:
                             player.rect.x -= 1

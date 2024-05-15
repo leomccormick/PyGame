@@ -10,7 +10,7 @@ def load_assets():
     assets[PLAYER] = pygame.transform.scale(assets[PLAYER], (PLAYER_WIDTH, PLAYER_HEIGHT))
     assets[ICE] = pygame.image.load(os.path.join(IMG_DIR, 'ICE.png'))
     assets[ICE] = pygame.transform.scale(assets[ICE], (ICE_WIDTH, ICE_HEIGHT))
-    
+
     # Carrega os sons do jogo
     # pygame.mixer.music.load(os.path.join(SND_DIR, 'tgfcoder-FrozenJam-SeamlessLoop.ogg'))
     # pygame.mixer.music.set_volume(0.4)
