@@ -15,20 +15,15 @@ class Player(pygame.sprite.Sprite):
         self.rect.centerx = WIDTH / 2
         self.rect.bottom = HEIGHT - 25
         self.speedx = 0
-        self.acaeleracao = 0
         self.groups = groups
         self.assets = assets
         self.parado = True
         
     def update(self):
-        self.rect.x += self.speedx
-        self.speedx += self.acaeleracao
-        if self.rect.x % (WIDTH/3) == 0:
-            self.acaeleracao *= -1
         if self.rect.x % (WIDTH/3 - WIDTH/6) == 0:
-            self.acaeleracao *= 0
             self.rect.x *= 0
             self.parado = True
+        self.rect.x += self.speedx
 
 class Ice(pygame.sprite.Sprite):
     def __init__(self, groups, assets, lane):

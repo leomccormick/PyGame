@@ -1,6 +1,7 @@
 from config import FPS, situations
 from assets import load_assets
 from sprites import Player, Ice
+from init_screen import
 import pygame
 import random
 
@@ -55,11 +56,11 @@ def game_screen(window):
                     keys_down[event.key] = True
                     if event.key == pygame.K_LEFT or event.key == pygame.K_a:
                         if player.parado and player.rect.x != 625:
-                            player.aceleracao = -125*2/0.09
+                            player.speedx = 5
                             player.parado = False
                     if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
                         if player.parado and player.rect.x != 125:
-                            player.aceleracao = 125*2/0.09
+                            player.speedx = 5
                             player.parado = False
 
         all_sprites.update()
@@ -75,6 +76,7 @@ def game_screen(window):
         if len(hits) > 0:
             now = pygame.time.get_ticks()
         
+        background_rect = background.get_rect()
         all_sprites.draw(window)
 
         pygame.display.update()
