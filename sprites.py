@@ -30,7 +30,7 @@ class Player(pygame.sprite.Sprite):
         else:
             self.rect.x += self.speedx
 
-class Ice(pygame.sprite.Sprite):
+class Arvore(pygame.sprite.Sprite):
     def __init__(self, groups, assets, lane):
         pygame.sprite.Sprite.__init__(self)
 
