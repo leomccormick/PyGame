@@ -50,27 +50,15 @@ def game_screen(window):
             contador = 0
             for i in range(3):
                 if cenario[0][i] != 0:
-                    arvore = Ice(groups, assets, i)
+                    arvore = Arvore(groups, assets, i)
                     all_sprites.add(arvore)
-                    all_ice.add(arvore)
+                    all_arvores.add(arvore)
             cenario.pop(0)
             if len(cenario) <= 3:
                 cenario += random.choice(situations)
 
-<<<<<<< HEAD
-        for ice in all_ice:
+        for ice in all_arvores:
             ice.speed = speed_screen
-=======
-        if situacaoDuracao % 50 == 0:
-            i = int(situacaoDuracao/50)
-            for tree in range(len(issue[i])):
-                if issue[i][tree] != 0:
-                    ArvorE = Arvore(groups, assets, tree)
-                    all_sprites.add(ArvorE)
-                    all_arvores.add(ArvorE)
->>>>>>> af1cdd81bb9b432732f02bbfeab1a4b21c002124
-
-        situacaoDuracao += 1
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
