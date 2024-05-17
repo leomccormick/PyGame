@@ -1,4 +1,4 @@
-from config import FPS, situations, IMG_DIR, BACKGROUND
+from config import FPS, situations, IMG_DIR, BACKGROUND, ARVORE_HEIGHT
 from assets import load_assets
 from sprites import Player, Ice
 from os import path
@@ -36,20 +36,29 @@ def game_screen(window):
     issue = [0, 0]
     situacaoDuracao = 100
 
+    speed_screen = 5
+
+    cenario = random.choice(situations)
+    contador = 0
+
     while state != DONE:
         clock.tick(FPS)
 
-        if situacaoDuracao == len(issue)*50:
-            issue = situations[random.randint(0, len(situations)-1)]
-            situacaoDuracao = 0
+        speed_screen = 0.7 + 0.3*(fase+4)
+        contador += speed_screen
+        if contador >= ARVORE_HEIGHT:
+            contador = 0
+            for i in range(3):
+                if cenario[0][i] != 0:
+                    arvore = Ice(groups, assets, i)
+                    all_sprites.add(arvore)
+                    all_ice.add(arvore)
+            cenario.pop(0)
+            if len(cenario) <= 3:
+                cenario += random.choice(situations)
 
-        if situacaoDuracao % 50 == 0:
-            i = int(situacaoDuracao/50)
-            for gelo in range(len(issue[i])):
-                if issue[i][gelo] != 0:
-                    IcE = Ice(groups, assets, gelo)
-                    all_sprites.add(IcE)
-                    all_ice.add(IcE)
+        for ice in all_ice:
+            ice.speed = speed_screen
 
         situacaoDuracao += 1
 
@@ -72,8 +81,7 @@ def game_screen(window):
                             player.speedx = 15
                             player.parado = False
 
-        player.update()
-        all_ice.update(fase)
+        all_sprites.update()
 
         tempo += 1
 

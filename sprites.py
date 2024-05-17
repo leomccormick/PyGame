@@ -46,10 +46,11 @@ class Ice(pygame.sprite.Sprite):
         self.rect.y = -250
         self.groups = groups
         self.assets = assets
-        self.speed = 5
+        self.speed = 0
     
-    def update(self, fase):
-        self.multiplicador = 0.7 + 0.3*fase
-        self.rect.y += self.speed*self.multiplicador
+    def update(self):
+#        self.multiplicador = 0.7 + 0.3*fase
+#        self.rect.y += int(self.speed*self.multiplicador)
+        self.rect.y += self.speed
         if self.rect.y >= HEIGHT:
             self.kill()
