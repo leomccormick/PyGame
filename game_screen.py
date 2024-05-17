@@ -64,12 +64,12 @@ def game_screen(window):
                     if event.key == pygame.K_LEFT or event.key == pygame.K_a:
                         if player.parado and player.rect.x != 25:
                             player.rect.x -= 1
-                            player.speedx = -10
+                            player.speedx = -15
                             player.parado = False
                     if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
                         if player.parado and player.rect.x != 525:
                             player.rect.x += 1
-                            player.speedx = 10
+                            player.speedx = 15
                             player.parado = False
 
         all_sprites.update()
