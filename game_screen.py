@@ -72,16 +72,16 @@ def game_screen(window):
                             player.speedx = 15
                             player.parado = False
 
-        all_sprites.update()
+        player.update()
+        all_ice.update(fase)
 
-        print(issue)
+        tempo += 1
 
-        tempo += 1/FPS
+        print(fase)
 
-        if tempo % 30 == 0:
+        if tempo % (30*60) == 0:
             fase += 1
-            IceVelM += 0.1
-
+        
         if state == PLAYING:
             hits = pygame.sprite.spritecollide(player, all_arvores, False, pygame.sprite.collide_mask)
         if len(hits) > 0:

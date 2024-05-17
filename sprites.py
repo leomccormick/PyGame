@@ -24,16 +24,16 @@ class Player(pygame.sprite.Sprite):
             self.speedx *= 0
             self.parado = True
         if self.rect.x == 275 -1 or self.rect.x == 275-250-1 or self.rect.x == 275+250-1:
-            self.rect.x += -14
+            self.rect.x += -24
         elif self.rect.x == 275 +1 or self.rect.x == 275-250+1 or self.rect.x == 275+250+1:
-            self.rect.x += 14
+            self.rect.x += 24
         else:
             self.rect.x += self.speedx
 
 class Arvore(pygame.sprite.Sprite):
     def __init__(self, groups, assets, lane):
         pygame.sprite.Sprite.__init__(self)
-
+        self.multiplicador = 1
         self.image = assets[ARVORE]
         self.mask = pygame.mask.from_surface(self.image)
         self.rect = self.image.get_rect()
@@ -48,7 +48,8 @@ class Arvore(pygame.sprite.Sprite):
         self.assets = assets
         self.speed = 5
     
-    def update(self):
-        self.rect.y += self.speed
+    def update(self, fase):
+        self.multiplicador = 0.7 + 0.3*fase
+        self.rect.y += self.speed*self.multiplicador
         if self.rect.y >= HEIGHT:
             self.kill()
