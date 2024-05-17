@@ -1,6 +1,6 @@
 from config import FPS, situations, IMG_DIR, BACKGROUND, ARVORE_HEIGHT
 from assets import load_assets
-from sprites import Player, Ice
+from sprites import Player, Arvore
 from os import path
 import pygame
 import random
@@ -16,10 +16,10 @@ def game_screen(window):
 
     # Criando grupo de gelos
     all_sprites = pygame.sprite.Group()
-    all_ice = pygame.sprite.Group()
+    all_arvores = pygame.sprite.Group()
     groups = {}
     groups['all_sprites'] = all_sprites
-    groups['all_ice'] = all_ice
+    groups['all_arvores'] = all_arvores
     tempo = 0
     # Criando o jogador
     player = Player(groups, assets)
@@ -57,8 +57,18 @@ def game_screen(window):
             if len(cenario) <= 3:
                 cenario += random.choice(situations)
 
+<<<<<<< HEAD
         for ice in all_ice:
             ice.speed = speed_screen
+=======
+        if situacaoDuracao % 50 == 0:
+            i = int(situacaoDuracao/50)
+            for tree in range(len(issue[i])):
+                if issue[i][tree] != 0:
+                    ArvorE = Arvore(groups, assets, tree)
+                    all_sprites.add(ArvorE)
+                    all_arvores.add(ArvorE)
+>>>>>>> af1cdd81bb9b432732f02bbfeab1a4b21c002124
 
         situacaoDuracao += 1
 
@@ -91,7 +101,7 @@ def game_screen(window):
             fase += 1
         
         if state == PLAYING:
-            hits = pygame.sprite.spritecollide(player, all_ice, False, pygame.sprite.collide_mask)
+            hits = pygame.sprite.spritecollide(player, all_arvores, False, pygame.sprite.collide_mask)
         if len(hits) > 0:
             now = pygame.time.get_ticks()
             state = DONE
