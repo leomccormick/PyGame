@@ -1,13 +1,11 @@
 import pygame
 from os import path
 from config import IMG_DIR, FPS, QUIT, GAME, BLACK, WHITE
-from assets import load_assets
 
 
 def init_screen(window):
     # Variável para o ajuste de velocidade
     clock = pygame.time.Clock()
-    assets =load_assets
 
     running = True
     while running:
