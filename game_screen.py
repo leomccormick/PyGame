@@ -53,7 +53,7 @@ def game_screen(window):
             contador = 0
             for i in range(3):
                 if cenario[0][i] != 0:
-                    arvore = Arvore(groups, assets, i)
+                    arvore = Arvore(groups, assets, i, fase)
                     all_sprites.add(arvore)
                     all_arvores.add(arvore)
             cenario.pop(0)
@@ -88,7 +88,7 @@ def game_screen(window):
 
         print(fase)
 
-        if tempo % (10*60) == 0:
+        if tempo % (5*60) == 0:
             fase += 1
         
         if state == PLAYING:

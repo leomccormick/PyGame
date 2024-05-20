@@ -31,7 +31,7 @@ class Player(pygame.sprite.Sprite):
             self.rect.x += self.speedx
 
 class Arvore(pygame.sprite.Sprite):
-    def __init__(self, groups, assets, lane):
+    def __init__(self, groups, assets, lane, fase):
         pygame.sprite.Sprite.__init__(self)
         self.multiplicador = 1
         self.image = assets[ARVORE]
@@ -46,7 +46,7 @@ class Arvore(pygame.sprite.Sprite):
         self.rect.y = -250
         self.groups = groups
         self.assets = assets
-        self.speed = 0
+        self.speed = 0.7 + 0.3*(fase+4)
     
     def update(self):
 #        self.multiplicador = 0.7 + 0.3*fase
