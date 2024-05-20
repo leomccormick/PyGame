@@ -1,4 +1,4 @@
-from config import FPS, situations, IMG_DIR, BACKGROUND, ARVORE_HEIGHT
+from config import FPS, situations, IMG_DIR, BACKGROUND, ARVORE_HEIGHT, DARK_YELLOW, WIDTH, SCORE_FONT
 from assets import load_assets
 from sprites import Player, Arvore
 from os import path
@@ -35,9 +35,6 @@ def game_screen(window):
     keys_down = {}
     score = 0
     fase = 1
-
-    issue = [0, 0]
-    situacaoDuracao = 100
 
     speed_screen = 0.7 + 0.3*(fase+4)
 
@@ -85,8 +82,11 @@ def game_screen(window):
         all_sprites.update()
 
         tempo += 1
+        if tempo % 6 == 0:
+            score += 1*fase
 
         print(fase)
+        print(score)
 
         if tempo % (5*60) == 0:
             fase += 1
@@ -99,6 +99,12 @@ def game_screen(window):
         
         window.blit(assets[BACKGROUND], (0, 0))
         all_sprites.draw(window)
+
+        # Desenhando o score
+        text_surface = assets[SCORE_FONT].render("{}".format(score), True, DARK_YELLOW)
+        text_rect = text_surface.get_rect()
+        text_rect.midtop = (WIDTH / 2,  10)
+        window.blit(text_surface, text_rect)
 
         pygame.display.update()
     pygame.quit()
