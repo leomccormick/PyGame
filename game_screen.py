@@ -4,6 +4,7 @@ from sprites import Player, Arvore
 from os import path
 import pygame
 import random
+import copy
 
 def game_screen(window):
     clock = pygame.time.Clock()
@@ -36,7 +37,7 @@ def game_screen(window):
 
     speed_screen = 0.7 + 0.3*(fase+4)
 
-    cenario = random.choice(situations)
+    cenario = random.choice(copy.deepcopy(situations))
     contador = 0
 
     while state != DONE:
@@ -51,9 +52,14 @@ def game_screen(window):
                     arvore = Arvore(groups, assets, i, fase)
                     all_sprites.add(arvore)
                     all_arvores.add(arvore)
-            cenario.remove(cenario[0])
+            del cenario[0]
             if len(cenario) <= 3:
-                cenario += situations[random.randint(0, len(situations)-1)]
+                print(1, cenario)
+                tempor = random.choice(copy.deepcopy(situations))
+                print(2, tempor)
+                cenario += tempor
+                print(3, cenario)
+                print('------------------------------------')
 
         for arvore in all_arvores:
             arvore.speed = speed_screen
@@ -82,9 +88,6 @@ def game_screen(window):
         tempo += 1
         if tempo % 6 == 0:
             score += 1*fase
-
-        print(fase)
-        print(score)
 
         if tempo % (5*60) == 0:
             fase += 1
