@@ -32,9 +32,16 @@ def quit_screen(window):
         
         # Desenhando o score
         window.fill(WHITE)
-        text_surface = assets[SCORE_FONT].render("PRESSIONE ESPAÇO PARA\nJOGAR NOVAMENTE", True, DARK_YELLOW)
+        text_surface = assets[SCORE_FONT].render("PRESSIONE ESPAÇO PARA", True, DARK_YELLOW)
         text_rect = text_surface.get_rect()
-        text_rect.midtop = (WIDTH / 2,  10)
+        text_rect.midtop = (WIDTH / 2,  HEIGHT / 2 - 30)
         window.blit(text_surface, text_rect)
+
+        text_surface = assets[SCORE_FONT].render("JOGAR NOVAMENTE", True, DARK_YELLOW)
+        text_rect = text_surface.get_rect()
+        text_rect.midtop = (WIDTH / 2,  HEIGHT / 2 + 30)
+        window.blit(text_surface, text_rect)
+
+        pygame.display.update()
 
     return state
