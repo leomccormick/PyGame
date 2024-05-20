@@ -15,8 +15,6 @@ def game_screen(window):
 
     window.blit(background, background_rect)
 
-    IceVelM = 1
-
     # Criando grupo de gelos
     all_sprites = pygame.sprite.Group()
     all_arvores = pygame.sprite.Group()
@@ -36,9 +34,6 @@ def game_screen(window):
     score = 0
     fase = 1
 
-    issue = [0, 0]
-    situacaoDuracao = 100
-
     speed_screen = 0.7 + 0.3*(fase+4)
 
     cenario = random.choice(situations)
@@ -56,9 +51,9 @@ def game_screen(window):
                     arvore = Arvore(groups, assets, i, fase)
                     all_sprites.add(arvore)
                     all_arvores.add(arvore)
-            cenario.pop(0)
+            cenario.remove(cenario[0])
             if len(cenario) <= 3:
-                cenario += random.choice(situations)
+                cenario += situations[random.randint(0, len(situations)-1)]
 
         for arvore in all_arvores:
             arvore.speed = speed_screen
@@ -86,9 +81,7 @@ def game_screen(window):
 
         tempo += 1
 
-        print(fase)
-
-        if tempo % (5*60) == 0:
+        if tempo % (10*FPS) == 0:
             fase += 1
         
         if state == PLAYING:
