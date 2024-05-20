@@ -7,7 +7,7 @@ pygame.init()
 pygame.mixer.init()
 
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Avalanche")
+pygame.display.set_caption("Skiing")
 
 state = INIT
 while state != QUIT:

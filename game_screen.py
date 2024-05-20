@@ -10,7 +10,10 @@ def game_screen(window):
     
     assets = load_assets()
 
-    background = pygame.image.load(path.join(IMG_DIR, 'background.jpg')).convert()
+    background = assets[BACKGROUND]
+    background_rect = background.get_rect()
+
+    window.blit(background, background_rect)
 
     IceVelM = 1
 
@@ -36,7 +39,7 @@ def game_screen(window):
     issue = [0, 0]
     situacaoDuracao = 100
 
-    speed_screen = 5
+    speed_screen = 0.7 + 0.3*(fase+4)
 
     cenario = random.choice(situations)
     contador = 0
@@ -57,8 +60,8 @@ def game_screen(window):
             if len(cenario) <= 3:
                 cenario += random.choice(situations)
 
-        for ice in all_arvores:
-            ice.speed = speed_screen
+        for arvore in all_arvores:
+            arvore.speed = speed_screen
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -85,7 +88,7 @@ def game_screen(window):
 
         print(fase)
 
-        if tempo % (30*60) == 0:
+        if tempo % (10*60) == 0:
             fase += 1
         
         if state == PLAYING:

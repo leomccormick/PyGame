@@ -1,17 +1,13 @@
 import pygame
 from os import path
-from config import IMG_DIR, FPS, QUIT, GAME, BLACK
+from config import IMG_DIR, FPS, QUIT, GAME, BLACK, WHITE
 from assets import load_assets
 
 
-def init_screen(screen):
+def init_screen(window):
     # Variável para o ajuste de velocidade
     clock = pygame.time.Clock()
     assets =load_assets
-
-     # Carrega o fundo da tela inicial
-    background = pygame.image.load(path.join(IMG_DIR, 'background.jpg')).convert() 
-    background_rect = background.get_rect()
 
     running = True
     while running:
@@ -32,8 +28,7 @@ def init_screen(screen):
                 running = False
 
         # A cada loop, redesenha o fundo e os sprites
-        screen.fill(BLACK)
-        screen.blit(background, background_rect)
+        window.fill(WHITE)
 
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()
