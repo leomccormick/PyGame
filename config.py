@@ -4,6 +4,7 @@ BACKGROUND = 'background'
 PLAYER = 'player'
 ICE = 'ICE'
 ARVORE = 'arvore'
+SCORE_FONT = 'score_font'
 
 # Tamanhos dos sprites
 PLAYER_WIDTH = 200
@@ -30,6 +31,7 @@ RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
+DARK_YELLOW = (255, 200, 0)
 
 # Estados para controle do fluxo da aplicação
 INIT = 0
