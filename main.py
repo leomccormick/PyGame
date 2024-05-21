@@ -15,9 +15,9 @@ while True:
     if state == INIT:
         state = init_screen(WINDOW)
     elif state == GAME: 
-        state = game_screen(WINDOW)
+        state, score = game_screen(WINDOW)
     elif state == QUIT: 
-        state = quit_screen(WINDOW)
+        state = quit_screen(WINDOW, score)
     else:
         break
 pygame.quit()

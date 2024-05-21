@@ -8,6 +8,8 @@ SCORE_FONT = 'score_font'
 BG_INIT = 'CAPA_CORRIGIDA'
 BG_QUIT = 'GAME_OVER_CORRIGIDO'
 
+arquivo_pontuacoes = 'leaderboard.txt'
+
 # Tamanhos dos sprites
 PLAYER_WIDTH = 200
 PLAYER_HEIGHT = 200

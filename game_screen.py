@@ -1,4 +1,4 @@
-from config import QUIT, FPS, situations, IMG_DIR, BACKGROUND, ARVORE_HEIGHT, DARK_YELLOW, WIDTH, SCORE_FONT
+from config import INIT, QUIT, FPS, situations, IMG_DIR, BACKGROUND, ARVORE_HEIGHT, DARK_YELLOW, WIDTH, SCORE_FONT
 from assets import load_assets
 from sprites import Player, Arvore
 from os import path
@@ -67,13 +67,13 @@ def game_screen(window):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 state = DONE
-                return None
+                return None, None
             if state == PLAYING:
                 if event.type == pygame.KEYDOWN:
                     keys_down[event.key] = True
                     if event.key == pygame.K_ESCAPE:
                         state = DONE
-                        return None
+                        return INIT
                     if event.key == pygame.K_LEFT or event.key == pygame.K_a:
                         if player.parado and player.rect.x != 25:
                             player.rect.x -= 1
@@ -110,4 +110,4 @@ def game_screen(window):
         window.blit(text_surface, text_rect)
 
         pygame.display.update()
-    return QUIT
+    return QUIT, score
