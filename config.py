@@ -5,8 +5,8 @@ PLAYER = 'player'
 ICE = 'ICE'
 ARVORE = 'arvore'
 SCORE_FONT = 'score_font'
-BG_INIT = 'CAPA'
-BG_QUIT = 'gameover'
+BG_INIT = 'CAPA_CORRIGIDA'
+BG_QUIT = 'GAME_OVER_CORRIGIDO'
 
 # Tamanhos dos sprites
 PLAYER_WIDTH = 200
