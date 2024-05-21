@@ -1,14 +1,12 @@
 import pygame
 from os import path
-from config import INIT, GAME, QUIT, FPS, WHITE, SCORE_FONT, WIDTH, HEIGHT, DARK_YELLOW
+from config import INIT, GAME, QUIT, FPS, WHITE, SCORE_FONT, WIDTH, HEIGHT, DARK_YELLOW, BG_QUIT
 from assets import load_assets
 
 def quit_screen(window):
     clock = pygame.time.Clock()
 
     assets = load_assets()
-
-    
 
     running = True
     while running:
@@ -31,7 +29,7 @@ def quit_screen(window):
                     running = False
         
         # Desenhando o score
-        window.fill(WHITE)
+        window.blit(assets[BG_QUIT], (0, 0))
         text_surface = assets[SCORE_FONT].render("PRESSIONE ESPAÇO PARA", True, DARK_YELLOW)
         text_rect = text_surface.get_rect()
         text_rect.midtop = (WIDTH / 2,  HEIGHT / 2 - 30)
