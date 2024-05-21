@@ -14,6 +14,7 @@ def game_screen(window):
     music = pygame.mixer.music.load('assets/som/Music.mp3')
     neve_som = pygame.mixer.Sound('assets/som/Neve.mp3')
     pygame.mixer.music.play(-1)
+    pygame.mixer.music.set_volume(0.1)
 
     background = assets[BACKGROUND]
     background_rect = background.get_rect()

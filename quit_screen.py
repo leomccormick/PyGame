@@ -7,6 +7,8 @@ from leaderboard_screen import leaderboard_screen
 def quit_screen(window, score):
     clock = pygame.time.Clock()
 
+    pygame.mixer.music.set_volume(0.0)
+
     assets = load_assets()
 
     running = True
@@ -26,6 +28,7 @@ def quit_screen(window, score):
                     state = leaderboard_screen(window, score)
                     running = False
                 if event.key == pygame.K_SPACE:
+                    pygame.mixer.music.set_volume(0.1)
                     state = INIT
                     running = False
         
