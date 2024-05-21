@@ -11,6 +11,11 @@ def game_screen(window):
     
     assets = load_assets()
 
+    music = pygame.mixer.music.load('Music.mp3')
+    pygame.mixer.music.play(-1)
+
+    neve_som = pygame.mixer.Sound('Neve.mp3')
+
     background = assets[BACKGROUND]
     background_rect = background.get_rect()
 
@@ -98,6 +103,7 @@ def game_screen(window):
             hits = pygame.sprite.spritecollide(player, all_arvores, False, pygame.sprite.collide_mask)
         if len(hits) > 0:
             now = pygame.time.get_ticks()
+            neve_som.play()
             state = DONE
         
         window.blit(assets[BACKGROUND], (0, 0))

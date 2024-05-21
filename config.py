@@ -7,6 +7,8 @@ ARVORE = 'arvore'
 SCORE_FONT = 'score_font'
 BG_INIT = 'CAPA_CORRIGIDA'
 BG_QUIT = 'GAME_OVER_CORRIGIDO'
+NEVE = 'Neve'
+MUSIC = 'Music'
 
 arquivo_pontuacoes = 'leaderboard.txt'
 
@@ -20,7 +22,7 @@ ARVORE_HEIGHT = 250
 
 # Estabelece a pasta que contem as figuras e sons.
 IMG_DIR = path.join(path.dirname(__file__), 'assets', 'img')
-SND_DIR = path.join(path.dirname(__file__), 'assets', 'snd')
+SND_DIR = path.join(path.dirname(__file__), 'assets', 'som')
 FNT_DIR = path.join(path.dirname(__file__), 'assets', 'font')
 
 # Dados gerais do jogo e tela.
