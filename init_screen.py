@@ -1,11 +1,14 @@
 import pygame
 from os import path
-from config import IMG_DIR, FPS, QUIT, GAME, BLACK, WHITE
+from config import IMG_DIR, FPS, QUIT, GAME, BLACK, WHITE, BG_INIT
+from assets import load_assets
 
 
 def init_screen(window):
     # Variável para o ajuste de velocidade
     clock = pygame.time.Clock()
+
+    assets = load_assets()
 
     running = True
     while running:
@@ -18,15 +21,20 @@ def init_screen(window):
         for event in pygame.event.get():
             # Verifica se foi fechado.
             if event.type == pygame.QUIT:
-                state = QUIT
+                state = None
                 running = False
 
-            if event.type == pygame.KEYUP:
-                state = GAME
-                running = False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER:
+                    state = GAME
+                    running = False
+                if event.key == pygame.K_ESCAPE:
+                    state = None
+                    running = False
+                
 
         # A cada loop, redesenha o fundo e os sprites
-        window.fill(WHITE)
+        window.blit(assets[BG_INIT], (0, 0))
 
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()
