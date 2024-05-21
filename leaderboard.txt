@@ -1,4 +1,11 @@
 teste_1: 102
 teste_2: 156
 teste_3: 102
-teste_4]: 156
+teste_4: 156
+teste_5: 415
+teste_6: 2345
+teste_7: 543
+teste_8: 12
+teste_9: 1543
+teste_10: 4654
+mt ruim: 222

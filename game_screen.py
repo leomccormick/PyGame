@@ -50,6 +50,7 @@ def game_screen(window):
         speed_screen = 0.7 + 0.3*(fase+4)
         contador += speed_screen
         if contador >= ARVORE_HEIGHT:
+            score += 1
             contador = 0
             for i in range(3):
                 if cenario[0][i] != 0:
@@ -92,8 +93,6 @@ def game_screen(window):
         all_sprites.update()
 
         tempo += 1
-        if tempo % 6 == 0:
-            score += 1*fase
 
         if tempo % (5*60) == 0:
             fase += 1

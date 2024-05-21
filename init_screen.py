@@ -13,7 +13,6 @@ def init_screen(window):
     running = True
     while running:
 
-        print('init')
         # Ajusta a velocidade do jogo.
         clock.tick(FPS)
 

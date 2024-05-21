@@ -14,10 +14,10 @@ def leaderboard_screen(window, score):
             for linha in arquivo:
                 nome, pontuacao = linha.strip().split(': ')
                 leaderboard.append((nome, int(pontuacao)))
-            # Ordena o leaderboard pela pontuação (maior para menor)
-            leaderboard.sort(key=lambda x: x[1], reverse=True)
-            # Converte de volta para o formato de string
-            return [f"{nome}: {pontuacao}" for nome, pontuacao in leaderboard]
+            leaderboard.sort(key=lambda x: x[1], reverse=True) # Ordena o leaderboard pela pontuação maior para menor
+            top_10 = leaderboard[:10]
+            lista_nomes = [f"{nome}: {pontuacao}" for nome, pontuacao in top_10]
+            return lista_nomes
 
     def draw_text(text, font, color, surface, x, y):
         text_surface = font.render(text, True, color)
@@ -29,7 +29,7 @@ def leaderboard_screen(window, score):
     assets = load_assets()
     font = pygame.font.Font(None, 36)
     nome_jogador = ""
-    input_active = True  # Definindo como True para permitir que o jogador digite seu nome
+    input_active = True  # Pro jogador digitar o nome
 
     running = True
     while running:
