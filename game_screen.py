@@ -1,4 +1,4 @@
-from config import INIT, QUIT, FPS, situations, IMG_DIR, BACKGROUND, ARVORE_HEIGHT, DARK_YELLOW, WIDTH, SCORE_FONT
+from config import INIT, QUIT, FPS, situations, IMG_DIR, BACKGROUND, ARVORE_HEIGHT, DARK_YELLOW, WIDTH, SCORE_FONT, MUSIC, NEVE
 from assets import load_assets
 from sprites import Player, Arvore
 from os import path
@@ -11,10 +11,9 @@ def game_screen(window):
     
     assets = load_assets()
 
-    music = pygame.mixer.music.load('Music.mp3')
+    music = pygame.mixer.music.load('assets/som/Music.mp3')
+    neve_som = pygame.mixer.Sound('assets/som/Neve.mp3')
     pygame.mixer.music.play(-1)
-
-    neve_som = pygame.mixer.Sound('Neve.mp3')
 
     background = assets[BACKGROUND]
     background_rect = background.get_rect()

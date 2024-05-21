@@ -14,8 +14,7 @@ def load_assets():
     assets[ARVORE] = pygame.transform.scale(assets[ARVORE], (ARVORE_WIDTH, ARVORE_HEIGHT))
     assets[BG_INIT] = pygame.image.load(os.path.join(IMG_DIR, 'CAPA_CORRIGIDA.jpg'))
     assets[BG_QUIT] = pygame.image.load(os.path.join(IMG_DIR, 'GAME_OVER_CORRIGIDO.jpg'))
-    assets[NEVE] = pygame.image.load(os.path.join(SND_DIR, 'Neve.mp3'))
-    assets[MUSIC] = pygame.image.load(os.path.join(SND_DIR, 'Musica.mp3'))
+    assets[NEVE] = pygame.mixer.Sound(os.path.join(SND_DIR, 'Neve.mp3'))
 
     # Carrega as fontes
     assets[SCORE_FONT] = pygame.font.Font(os.path.join(FNT_DIR, 'PressStart2P.ttf'), 28)
