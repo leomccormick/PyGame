@@ -1,6 +1,6 @@
 import pygame
 from assets import load_assets
-from config import FPS, INIT, BG_QUIT, WIDTH, HEIGHT
+from config import FPS, INIT, BG_QUIT, WIDTH, HEIGHT, WHITE, YELLOW
 from os import path
 
 def leaderboard_screen(window, score):
@@ -37,14 +37,14 @@ def leaderboard_screen(window, score):
 
         window.fill((0, 0, 0))  # Preenche a tela com a cor preta
         # window.blit(assets[BG_QUIT], (0, 0))
-
+        
         if input_active:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     state = None
                     running = False
                 elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_RETURN:
+                    if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER:
                         if input_active:
                             salvar_pontuacao(score, nome_jogador)
                             input_active = False
@@ -52,17 +52,27 @@ def leaderboard_screen(window, score):
                         nome_jogador = nome_jogador[:-1]
                     else:
                         nome_jogador += event.unicode
-            draw_text("Digite seu nome:", font, (255, 255, 255), window, WIDTH // 2, HEIGHT // 4)
-            draw_text(nome_jogador, font, (255, 255, 255), window, WIDTH // 2, HEIGHT // 2)
+            draw_text("Digite seu nome:", font, WHITE, window, WIDTH // 2, HEIGHT // 4)
+            draw_text(nome_jogador, font, WHITE, window, WIDTH // 2, HEIGHT // 2)
         else:
             leaderboard = mostrar_leaderboard()
-            draw_text("Leaderboard:", font, (255, 255, 255), window, WIDTH // 2, HEIGHT // 4)
+            draw_text("Aperte ENTER para jogar novamente", font, YELLOW, window, WIDTH // 2, 50)
+            draw_text("ou qualquer outra tecla para sair", font, YELLOW, window, WIDTH // 2, 85)
+            draw_text("Melhores pontuações:", font, WHITE, window, WIDTH // 2, HEIGHT // 4 - 30)
             for i, linha in enumerate(leaderboard):
-                draw_text(linha, font, (255, 255, 255), window, WIDTH // 2, HEIGHT // 4 + 40 * (i+1))
+                draw_text(linha, font, WHITE, window, WIDTH // 2, HEIGHT // 4 + 40 * (i+1))
             for event in pygame.event.get():
-                if event.type == pygame.QUIT or event.type == pygame.KEYDOWN:
+                if event.type == pygame.QUIT:
                     state = None
                     running = False
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_r:
+                        state = INIT
+                        running = False
+                    else:
+                        state = None
+                        running = False
+
  
         pygame.display.flip()
 

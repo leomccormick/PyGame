@@ -1,7 +1,8 @@
 from pygame.sprite import Group
 import pygame
+from random import choice
 from config import WIDTH, HEIGHT
-from assets import load_assets, PLAYER, ICE, ARVORE
+from assets import PLAYER, ARVORE, PEDRA
 
 IceVelInit = 50
 
@@ -34,7 +35,7 @@ class Arvore(pygame.sprite.Sprite):
     def __init__(self, groups, assets, lane, fase):
         pygame.sprite.Sprite.__init__(self)
         self.multiplicador = 1
-        self.image = assets[ARVORE]
+        self.image = choice((assets[ARVORE], assets[PEDRA]))
         self.mask = pygame.mask.from_surface(self.image)
         self.rect = self.image.get_rect()
         if lane == 0:

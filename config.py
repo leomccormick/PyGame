@@ -2,21 +2,18 @@ from os import path
 
 BACKGROUND = 'background'
 PLAYER = 'player'
-ICE = 'ICE'
 ARVORE = 'arvore'
 SCORE_FONT = 'score_font'
 BG_INIT = 'CAPA_CORRIGIDA'
-BG_QUIT = 'GAME_OVER_CORRIGIDO'
+BG_QUIT = 'gameover'
 NEVE = 'Neve'
 MUSIC = 'Music'
+PEDRA = 'pedra'
 
-arquivo_pontuacoes = 'leaderboard.txt'
 
 # Tamanhos dos sprites
 PLAYER_WIDTH = 200
 PLAYER_HEIGHT = 200
-ICE_WIDTH = 250 
-ICE_HEIGHT = 250
 ARVORE_WIDTH = 250
 ARVORE_HEIGHT = 250
 
@@ -54,6 +51,10 @@ situations = [
         [0, 0, 0],
         [1, 1, 0],
         [1, 1, 0],
+        [1, 0, 0],
+        [0, 0, 1],
+        [0, 1, 0],
+        [0, 1, 0]
     ],
     [
         [0, 0, 0],
@@ -61,7 +62,11 @@ situations = [
         [1, 1, 0],
         [1, 1, 0],
         [1, 0, 0],
-        [1, 0, 1]
+        [1, 0, 1],
+        [1, 0, 0],
+        [0, 1, 0],
+        [1, 0, 0],
+        [0, 0, 1]
     ],
     [
         [0, 0, 0],
@@ -69,6 +74,10 @@ situations = [
         [0, 1, 0],
         [0, 0, 0],
         [1, 0, 1],
+        [1, 0, 1],
+        [0, 0, 1],
+        [0, 1, 1],
+        [0, 0, 0],
         [1, 0, 1]
     ],
     [
@@ -77,7 +86,11 @@ situations = [
         [0, 0, 1],
         [1, 0, 0],
         [1, 1, 0],
-        [1, 1, 0],
+        [1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 0],
+        [0, 1, 1],
+        [0, 0, 1]
     ],
     [
         [0, 0, 0],
@@ -85,7 +98,11 @@ situations = [
         [1, 0, 1],
         [0, 0, 1],
         [0, 1, 0],
-        [0, 1, 0]
+        [0, 1, 0],
+        [0, 0, 1],
+        [1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 0]
     ],
     [
         [0, 0, 0],
@@ -93,7 +110,11 @@ situations = [
         [0, 0, 0],
         [1, 0, 1],
         [0, 0, 0],
-        [0, 1, 0]
+        [0, 1, 0],
+        [0, 0, 1],
+        [1, 0, 1],
+        [1, 0, 0],
+        [1, 1, 0]
     ]
 ]
 

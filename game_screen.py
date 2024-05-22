@@ -40,7 +40,7 @@ def game_screen(window):
     score = 0
     fase = 1
 
-    speed_screen = 0.7 + 0.3*(fase+4)
+    speed_screen = 1 + 0.5*(fase+4)
 
     cenario = random.choice(copy.deepcopy(situations))
     contador = 0

@@ -25,6 +25,9 @@ def quit_screen(window, score):
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
+                    state = None
+                    running = False
+                if event.key == pygame.K_KP_ENTER or event.key == pygame.K_RETURN:
                     state = leaderboard_screen(window, score)
                     running = False
                 if event.key == pygame.K_SPACE:
