@@ -60,3 +60,6 @@ Ganut: 154
 mjg: 4
 3berto: 54
 pietro: 84
+mariana VAMO C COMP: 75
+math ccomp: 83
+tomaz ccomp: 25
