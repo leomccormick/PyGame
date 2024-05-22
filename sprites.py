@@ -25,9 +25,9 @@ class Player(pygame.sprite.Sprite):
             self.speedx *= 0
             self.parado = True
         if self.rect.x == 275 -1 or self.rect.x == 275-250-1 or self.rect.x == 275+250-1:
-            self.rect.x += -24
+            self.rect.x += -29
         elif self.rect.x == 275 +1 or self.rect.x == 275-250+1 or self.rect.x == 275+250+1:
-            self.rect.x += 24
+            self.rect.x += 29
         else:
             self.rect.x += self.speedx
 

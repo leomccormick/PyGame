@@ -36,7 +36,6 @@ def leaderboard_screen(window, score):
         clock.tick(FPS)
 
         window.fill((0, 0, 0))  # Preenche a tela com a cor preta
-        # window.blit(assets[BG_QUIT], (0, 0))
         
         if input_active:
             for event in pygame.event.get():
@@ -66,7 +65,7 @@ def leaderboard_screen(window, score):
                     state = None
                     running = False
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_r:
+                    if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER:
                         state = INIT
                         running = False
                     else:

@@ -40,15 +40,15 @@ def game_screen(window):
     score = 0
     fase = 1
 
-    speed_screen = 1 + 0.5*(fase+4)
+    speed_screen = 2 + 0.5*(fase+4)
 
     cenario = random.choice(copy.deepcopy(situations))
     contador = 0
 
     while state != DONE:
         clock.tick(FPS)
-
-        speed_screen = 0.7 + 0.3*(fase+4)
+#        print('fase:', fase, '    velocidade:', speed_screen)
+        speed_screen = 2 + 0.5*(fase+4)
         contador += speed_screen
         if contador >= ARVORE_HEIGHT:
             score += 1
@@ -60,12 +60,9 @@ def game_screen(window):
                     all_arvores.add(arvore)
             del cenario[0]
             if len(cenario) <= 3:
-                print(1, cenario)
                 tempor = random.choice(copy.deepcopy(situations))
-                print(2, tempor)
                 cenario += tempor
-                print(3, cenario)
-                print('------------------------------------')
+
 
         for arvore in all_arvores:
             arvore.speed = speed_screen
@@ -83,12 +80,12 @@ def game_screen(window):
                     if event.key == pygame.K_LEFT or event.key == pygame.K_a:
                         if player.parado and player.rect.x != 25:
                             player.rect.x -= 1
-                            player.speedx = -15
+                            player.speedx = -20
                             player.parado = False
                     if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
                         if player.parado and player.rect.x != 525:
                             player.rect.x += 1
-                            player.speedx = 15
+                            player.speedx = 20
                             player.parado = False
 
         all_sprites.update()
