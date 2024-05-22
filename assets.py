@@ -13,6 +13,7 @@ def load_assets():
     assets[PEDRA] = pygame.image.load(os.path.join(IMG_DIR, 'pedra.png'))
     assets[PEDRA] = pygame.transform.scale(assets[PEDRA], (ARVORE_WIDTH, ARVORE_HEIGHT))
     assets[BG_INIT] = pygame.image.load(os.path.join(IMG_DIR, 'CAPA_CORRIGIDA.png'))
+    assets[BG_INIT] = pygame.transform.scale(assets[BG_INIT], (WIDTH, HEIGHT))
     assets[BG_QUIT] = pygame.image.load(os.path.join(IMG_DIR, 'gameover.png'))
     assets[BG_QUIT] = pygame.transform.scale(assets[BG_QUIT], (WIDTH+15, HEIGHT+15))
     assets[NEVE] = pygame.mixer.Sound(os.path.join(SND_DIR, 'Neve.mp3'))
