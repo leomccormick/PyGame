@@ -10,7 +10,7 @@ pygame.mixer.init()
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Skiing")
 
-state = INIT
+state = INIT    
 while True:
     if state == INIT:
         state = init_screen(WINDOW)

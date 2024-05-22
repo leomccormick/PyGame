@@ -55,8 +55,8 @@ def leaderboard_screen(window, score):
             draw_text(nome_jogador, font, WHITE, window, WIDTH // 2, HEIGHT // 2)
         else:
             leaderboard = mostrar_leaderboard()
-            draw_text("Aperte ENTER para jogar novamente", font, YELLOW, window, WIDTH // 2, 50)
-            draw_text("ou qualquer outra tecla para sair", font, YELLOW, window, WIDTH // 2, 85)
+            draw_text("Aperte qualquer tecla", font, YELLOW, window, WIDTH // 2, 50)
+            draw_text("para jogar novamente", font, YELLOW, window, WIDTH // 2, 85)
             draw_text("Melhores pontuações:", font, WHITE, window, WIDTH // 2, HEIGHT // 4 - 30)
             for i, linha in enumerate(leaderboard):
                 draw_text(linha, font, WHITE, window, WIDTH // 2, HEIGHT // 4 + 40 * (i+1))
@@ -65,13 +65,8 @@ def leaderboard_screen(window, score):
                     state = None
                     running = False
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER:
-                        state = INIT
-                        running = False
-                    else:
-                        state = None
-                        running = False
-
+                    state = INIT
+                    running = False
  
         pygame.display.flip()
 
