@@ -40,7 +40,7 @@ def game_screen(window):
     score = 0
     fase = 1
 
-    speed_screen = 2 + 0.5*(fase+4)
+    speed_screen = 2 + 0.8*(fase+4)
 
     cenario = random.choice(copy.deepcopy(situations))
     contador = 0
@@ -48,7 +48,7 @@ def game_screen(window):
     while state != DONE:
         clock.tick(FPS)
 #        print('fase:', fase, '    velocidade:', speed_screen)
-        speed_screen = 2 + 0.5*(fase+4)
+        speed_screen = 2 + 0.8*(fase+4)
         contador += speed_screen
         if contador >= ARVORE_HEIGHT:
             score += 1
