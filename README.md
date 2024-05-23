@@ -6,7 +6,8 @@ O Skiing é um jogo individual onde o objetivo principal é ajudar o esquiador a
 Além de ser um passatempo, o jogo também pode servir como entretenimento para um grupo de amigos: um placar com as 10 melhores pontuações pode aparecer no final, permitindo com que cada jogador inclua seu próprio nome e dispute com os outros para ver quem chega mais longe.
 
 ## Vídeo de demonstração do jogo
-link
+[![Assista ao vídeo!](https://img.youtube.com/vi/_HYWmPbORc0/maxresdefault.jpg)](https://youtu.be/_HYWmPbORc0)
+https://youtu.be/_HYWmPbORc0 
 
 ## Como instalar
 Para instalar o jogo, primeiro baixe todos os arquivos do repositório em alguma pasta de seu computador. Em seguida, além de ter o python baixado em seu dispositivo, é necessário instalar algumas bibliotecas: pygame, random, os, copy.
