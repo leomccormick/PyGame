@@ -1,4 +1,4 @@
-from config import INIT, QUIT, FPS, situations, IMG_DIR, BACKGROUND, ARVORE_HEIGHT, DARK_YELLOW, WIDTH, SCORE_FONT, MUSIC, NEVE
+from config import INIT, QUIT, FPS, situations, BACKGROUND, ARVORE_HEIGHT, DARK_YELLOW, WIDTH, SCORE_FONT
 from assets import load_assets
 from sprites import Player, Arvore
 from os import path

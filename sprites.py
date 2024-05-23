@@ -1,15 +1,13 @@
-from pygame.sprite import Group
 import pygame
 from random import choice
 from config import WIDTH, HEIGHT
 from assets import PLAYER, ARVORE, PEDRA
 
-IceVelInit = 50
-
 class Player(pygame.sprite.Sprite):
     def __init__(self, groups, assets):
         pygame.sprite.Sprite.__init__(self)
 
+        # Carrega a imagem do jogador e cria sua máscara de colisão
         self.image = assets[PLAYER]
         self.mask = pygame.mask.from_surface(self.image)
         self.rect = self.image.get_rect()
@@ -21,12 +19,15 @@ class Player(pygame.sprite.Sprite):
         self.parado = True
         
     def update(self):
-        if self.rect.x == 275 or self.rect.x == 275-250 or self.rect.x == 275+250:
+        # Verifica se o jogador está parado
+        if self.rect.x == 275 or self.rect.x == 275 - 250 or self.rect.x == 275 + 250:
             self.speedx *= 0
             self.parado = True
-        if self.rect.x == 275 -1 or self.rect.x == 275-250-1 or self.rect.x == 275+250-1:
+        
+        # Move o jogador para a esquerda ou direita
+        if self.rect.x == 275 - 1 or self.rect.x == 275 - 250 - 1 or self.rect.x == 275 + 250 - 1:
             self.rect.x += -29
-        elif self.rect.x == 275 +1 or self.rect.x == 275-250+1 or self.rect.x == 275+250+1:
+        elif self.rect.x == 275 + 1 or self.rect.x == 275 - 250 + 1 or self.rect.x == 275 + 250 + 1:
             self.rect.x += 29
         else:
             self.rect.x += self.speedx
@@ -34,10 +35,13 @@ class Player(pygame.sprite.Sprite):
 class Arvore(pygame.sprite.Sprite):
     def __init__(self, groups, assets, lane, fase):
         pygame.sprite.Sprite.__init__(self)
-        self.multiplicador = 1
+
+        # Escolhe aleatoriamente entre uma árvore e uma pedra para gerar a imagem
         self.image = choice((assets[ARVORE], assets[PEDRA]))
         self.mask = pygame.mask.from_surface(self.image)
         self.rect = self.image.get_rect()
+        
+        # Define a posição inicial da árvore com base na pista
         if lane == 0:
             self.rect.x = 20
         elif lane == 1:
@@ -47,11 +51,14 @@ class Arvore(pygame.sprite.Sprite):
         self.rect.y = -250
         self.groups = groups
         self.assets = assets
-        self.speed = 0.7 + 0.3*(fase+4)
+        
+        # Define a velocidade da árvore com base na fase do jogo
+        self.speed = 0.7 + 0.3 * (fase + 4)
     
     def update(self):
-#        self.multiplicador = 0.7 + 0.3*fase
-#        self.rect.y += int(self.speed*self.multiplicador)
+        # Atualiza a posição da árvore
         self.rect.y += self.speed
+        
+        # Remove a árvore quando ela sai da tela
         if self.rect.y >= HEIGHT:
             self.kill()

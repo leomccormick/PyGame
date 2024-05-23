@@ -63,3 +63,7 @@ pietro: 84
 mariana VAMO C COMP: 75
 math ccomp: 83
 tomaz ccomp: 25
+teste: 5
+teste: 9
+teste: 7
+teste: 8
